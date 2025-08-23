@@ -14,11 +14,6 @@ const ko = {
     type: "input",
     message: "GID를 입력하세요. (선택사항): ",
   },
-  home: {
-    name: "home",
-    type: "input",
-    message: "홈 디렉토리를 입력하세요. (기본값: /home/이름): ",
-  },
   shell: {
     name: "shell",
     type: "input",
@@ -46,11 +41,6 @@ const en = {
     name: "gid",
     type: "input",
     message: "Enter the GID. (optional): ",
-  },
-  home: {
-    name: "home",
-    type: "input",
-    message: "Enter the home directory. (default: /home/name): ",
   },
   shell: {
     name: "shell",
