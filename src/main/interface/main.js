@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import inquirer from "inquirer";
-import mainPrompt from "../prompt/main";
-import userInterface from "./user/interface";
-import groupInterface from "./group/interface";
-import settingsInterface from "./settings/interface";
+import mainPrompt from "../prompt/main.js";
+import userInterface from "../../user/interface/index.js";
+import groupInterface from "../../group/interface/index.js";
+import settingsInterface from "../../settings/interface/index.js";
 
 const mainInterface = async (language) => {
   while (true) {
