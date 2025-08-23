@@ -11,7 +11,7 @@ const main = async (language) => {
     switch (action) {
       // Print user list
       case prompt.choices[0]:
-        const result = await userCommand.printList();
+        await userCommand.printList(language);
         break;
       // Add user
       case prompt.choices[1]:
