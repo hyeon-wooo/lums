@@ -3,10 +3,14 @@
   "version": "0.0.1",
   "type": "module",
   "main": "src/index.js",
+  "bin": {
+    "lums": "src/index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
-    "build": "pkg -t node18-linux-x64 --compress Brotli --output build/lums src/index.js"
+    "bundle": "esbuild src/index.js --bundle --platform=node --format=cjs --target=node18 --outfile=build/index.cjs",
+    "build": "npm run bundle && pkg -t node18-linux-x64 --compress Brotli --output build/lums build/index.cjs"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +21,16 @@
     "string-width": "7.2.0"
   },
   "devDependencies": {
-    "pkg": "^5.8.1"
+    "pkg": "^5.8.1",
+    "esbuild": "^0.23.0"
+  },
+  "pkg": {
+    "scripts": [
+      "src/**/*.js"
+    ],
+    "assets": [
+      "package.json",
+      "node_modules/**/package.json"
+    ]
   }
 }
