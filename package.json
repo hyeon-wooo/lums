@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "build": "pkg -t node18-linux-x64 --compress Brotli --output build/lums src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +15,8 @@
   "dependencies": {
     "inquirer": "^12.9.3",
     "string-width": "7.2.0"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1"
   }
 }
