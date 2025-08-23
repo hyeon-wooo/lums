@@ -1,0 +1,6 @@
+{
+  "main": "build/index.cjs",
+  "output": "build/sea-prep.blob",
+  "useSnapshot": false,
+  "useCodeCache": false
+}

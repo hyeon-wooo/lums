@@ -3,14 +3,10 @@
   "version": "0.0.1",
   "type": "module",
   "main": "src/index.js",
-  "bin": {
-    "lums": "src/index.js"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
-    "bundle": "esbuild src/index.js --bundle --platform=node --format=cjs --target=node18 --outfile=build/index.cjs",
-    "build": "npm run bundle && pkg -t node18-linux-x64 --compress Brotli --output build/lums build/index.cjs"
+    "build": "rm -rf build && docker run --platform=linux/amd64 --rm -v \"$PWD\":/app -w /app node:20 bash -lc 'npm ci && npx -y esbuild src/index.js --bundle --platform=node --format=cjs --target=node20 --outfile=build/index.cjs && node --experimental-sea-config sea-config.json && cp $(command -v node) build/lums && npx -y postject build/lums NODE_SEA_BLOB build/sea-prep.blob --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2 && chmod +x build/lums'"
   },
   "keywords": [],
   "author": "",
@@ -21,16 +17,6 @@
     "string-width": "7.2.0"
   },
   "devDependencies": {
-    "pkg": "^5.8.1",
     "esbuild": "^0.23.0"
-  },
-  "pkg": {
-    "scripts": [
-      "src/**/*.js"
-    ],
-    "assets": [
-      "package.json",
-      "node_modules/**/package.json"
-    ]
   }
 }
