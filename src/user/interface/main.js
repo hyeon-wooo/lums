@@ -2,6 +2,7 @@ import inquirer from "inquirer";
 import mainPrompt from "../prompt/main.js";
 import userCommand from "../command/index.js";
 import invalidInputPrompt from "../../shared/prompt/invalid_input.js";
+import userInterface from "./index.js";
 
 const main = async (language) => {
   while (true) {
@@ -15,6 +16,7 @@ const main = async (language) => {
         break;
       // Add user
       case prompt.choices[1]:
+        await userInterface.addUser(language);
         break;
       // Delete user
       case prompt.choices[2]:
