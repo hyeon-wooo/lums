@@ -5,6 +5,7 @@ import delUser from "./del.js";
 import createPEMKey from "./create_pem_key.js";
 import getUserByUserName from "./get.js";
 import delPassword from "./del_password.js";
+import checkUserExist from "./check_exist.js";
 
 const userCommand = {
   printList,
@@ -14,6 +15,7 @@ const userCommand = {
   createPEMKey,
   getUserByUserName,
   delPassword,
+  checkUserExist,
 };
 
 export default userCommand;

@@ -7,6 +7,8 @@ const ko = {
     "목록 출력 (전체)",
     "추가",
     "삭제",
+    "멤버 추가",
+    "멤버 삭제",
     "이전으로",
   ],
 };
@@ -20,6 +22,8 @@ const en = {
     "Print list (all)",
     "Add",
     "Delete",
+    "Add member",
+    "Delete member",
     "Go back",
   ],
 };

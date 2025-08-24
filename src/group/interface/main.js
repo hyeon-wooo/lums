@@ -26,8 +26,16 @@ const main = async (language) => {
       case prompt.choices[3]:
         await groupInterface.deleteGroup(language);
         break;
-      // Go back
+      // Add member
       case prompt.choices[4]:
+        await groupInterface.addMember(language);
+        break;
+      // Delete member
+      case prompt.choices[5]:
+        await groupInterface.delMember(language);
+        break;
+      // Go back
+      case prompt.choices[6]:
         return 0;
       default:
         console.log(invalidInputPrompt[language]);
