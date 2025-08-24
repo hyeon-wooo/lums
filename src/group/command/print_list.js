@@ -2,10 +2,9 @@ import groupCommand from "../command";
 import printTable from "../../shared/print_table.js";
 import groupListLabel from "../label/list_column.js";
 
-const printList = async (language) => {
-  const list = await groupCommand.getList();
-
-  console.log("list: ", list);
+const printList = async (language, options = { over1000: false }) => {
+  let list = await groupCommand.getList();
+  if (options.over1000) list = list.filter((g) => g.gid >= 1000);
 
   const rows = list.map((row) => {
     const name = row.name ?? "";

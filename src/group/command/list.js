@@ -17,7 +17,7 @@ const getGroups = () => {
 // - 모든 그룹: await getList()
 // - 특정 사용자 소속 그룹: await getList({ username: "username" })
 const getList = async ({ username } = {}) => {
-  const groups = getGroups();
+  let groups = getGroups();
   if (!username) return groups;
 
   const result = new Set();
