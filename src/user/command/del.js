@@ -1,8 +1,8 @@
-import { execSync } from "child_process";
+import execCommand from "../../shared/exec_command.js";
 
 const delUser = async (name, isDeleteHome = false) => {
   const command = `userdel${isDeleteHome ? " -r" : ""} ${name}`;
-  execSync(command);
+  execCommand(command);
 };
 
 export default delUser;

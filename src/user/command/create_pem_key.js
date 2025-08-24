@@ -2,6 +2,7 @@ import { execSync, spawnSync } from "child_process";
 import path from "path";
 import fs from "fs";
 import userCommand from "./index.js";
+import execCommand from "../../shared/exec_command.js";
 
 const createPEMKey = async (userName) => {
   const sshDir = path.join("/home", userName, ".ssh");
@@ -16,6 +17,7 @@ const createPEMKey = async (userName) => {
   if (fs.existsSync(pubFilePath)) throw new Error("Pub exists");
 
   // key 생성
+  printCommand(`ssh-keygen -t rsa -b 4096 -f ${pemFilePath}`);
   const res = spawnSync("ssh-keygen", [
     "-t",
     "rsa",
@@ -30,15 +32,15 @@ const createPEMKey = async (userName) => {
   }
 
   // public key 등록
-  execSync(`echo "${pubFilePath}" >> ${sshDir}/authorized_keys`);
+  execCommand(`echo "${pubFilePath}" >> ${sshDir}/authorized_keys`);
 
   // 권한 조정
 
-  execSync(`chmod 600 ${pemFilePath}`);
-  execSync(`chmod 644 ${pubFilePath}`);
-  execSync(`chmod 700 ${sshDir}`);
+  execCommand(`chmod 600 ${pemFilePath}`);
+  execCommand(`chmod 644 ${pubFilePath}`);
+  execCommand(`chmod 700 ${sshDir}`);
   const { uid, gid } = await userCommand.getUserByUserName(userName);
-  execSync(`chown -R ${uid}:${gid} ${sshDir}`);
+  execCommand(`chown -R ${uid}:${gid} ${sshDir}`);
 
   return pemFilePath;
 };

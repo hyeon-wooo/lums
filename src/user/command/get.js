@@ -1,6 +1,8 @@
 import { spawnSync } from "child_process";
+import printCommand from "../../shared/print_command.js";
 
 const getUserByUserName = async (userName) => {
+  printCommand(`id ${userName}`);
   const res = spawnSync("id", [userName]);
   if (res.status !== 0) {
     throw new Error("User not found");

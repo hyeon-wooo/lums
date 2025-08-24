@@ -1,7 +1,7 @@
-import { execSync } from "child_process";
+import execCommand from "../../shared/exec_command.js";
 
 const delPassword = async (name) => {
-  execSync(`passwd -d ${name}`);
+  execCommand(`passwd -d ${name}`);
 };
 
 export default delPassword;

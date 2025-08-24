@@ -1,9 +1,9 @@
-import { execSync } from "child_process";
 import userListLabel from "../label/list_column.js";
 import printTable from "../../shared/print_table.js";
+import execCommand from "../../shared/exec_command.js";
 
 const printList = async (language) => {
-  const result = execSync("cat /etc/passwd").toString();
+  const result = execCommand("cat /etc/passwd").toString();
 
   const list = result
     .split("\n")

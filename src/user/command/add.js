@@ -1,6 +1,7 @@
 import { execSync } from "child_process";
 import { getNextUid, getNextGid } from "./id_allocator.js";
 import groupCommand from "../../group/command/index.js";
+import execCommand from "../../shared/exec_command.js";
 
 const addUser = async ({ name, uid, gid, shell, gecos }) => {
   let command = `useradd -m `;
@@ -15,7 +16,7 @@ const addUser = async ({ name, uid, gid, shell, gecos }) => {
   if (!(await groupCommand.checkGroupExist({ gidOrName: gid })))
     await groupCommand.addGroup({ name, gid });
 
-  execSync(command).toString();
+  execCommand(command).toString();
 
   return { name, uid };
 };

@@ -1,4 +1,5 @@
 import { spawnSync } from "child_process";
+import printCommand from "../../shared/print_command";
 
 // Ubuntu/Debian: chpasswd에 "name:password"를 stdin으로 전달
 const changePassword = async ({ name, password }) => {
@@ -6,6 +7,8 @@ const changePassword = async ({ name, password }) => {
     input: `${name}:${password}\n`,
     encoding: "utf8",
   });
+
+  printCommand(`chpasswd ${name}:****`);
 
   const stderr = res.stderr || "";
   const stdout = res.stdout || "";
