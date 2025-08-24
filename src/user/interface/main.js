@@ -18,12 +18,16 @@ const main = async (language) => {
       case prompt.choices[1]:
         await userInterface.addUser(language);
         break;
-      // Delete user
+      // Change password
       case prompt.choices[2]:
+        await userInterface.changePassword(language);
+        break;
+      // Delete user
+      case prompt.choices[3]:
         await userInterface.deleteUser(language);
         break;
       // Go back
-      case prompt.choices[3]:
+      case prompt.choices[4]:
         return 0;
       default:
         console.log(invalidInputPrompt[language].message);
