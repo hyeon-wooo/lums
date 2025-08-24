@@ -1,7 +1,7 @@
 import { execSync } from "child_process";
 
-const checkGroupExist = async ({ gid }) => {
-  const command = `getent group ${gid}`;
+const checkGroupExist = async ({ gidOrName }) => {
+  const command = `getent group ${gidOrName}`;
   try {
     execSync(command).toString();
     return true;

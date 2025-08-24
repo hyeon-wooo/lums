@@ -20,7 +20,7 @@ const main = async (language) => {
         break;
       // Delete group
       case prompt.choices[2]:
-        // await groupCommand.deleteGroup(language);
+        await groupInterface.deleteGroup(language);
         break;
       // Go back
       case prompt.choices[3]:

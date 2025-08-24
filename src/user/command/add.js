@@ -12,7 +12,7 @@ const addUser = async ({ name, uid, gid, shell, gecos }) => {
   if (gecos) command += `-c ${gecos} `;
   command += `${name}`;
 
-  if (!(await groupCommand.checkGroupExist({ gid })))
+  if (!(await groupCommand.checkGroupExist({ gidOrName: gid })))
     await groupCommand.addGroup({ name, gid });
 
   execSync(command).toString();
