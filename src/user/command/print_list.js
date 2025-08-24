@@ -30,8 +30,6 @@ const printList = async (language) => {
     .filter((row) => row[3].startsWith("/home"));
 
   printTable(userListLabel[language], rows);
-  console.log("Total: ", rows.length);
-  console.log("\n");
 };
 
 export default printList;

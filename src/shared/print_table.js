@@ -27,6 +27,8 @@ const printTable = (header, rows) => {
   console.log(sep);
   rows.forEach((r) => console.log(formatLine(r)));
   console.log(sep);
+  console.log("Total: ", rows.length);
+  console.log("\n");
 };
 
 export default printTable;
