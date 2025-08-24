@@ -16,7 +16,7 @@ const main = async (language) => {
         break;
       // Add group
       case prompt.choices[1]:
-        // await groupCommand.addGroup(language);
+        await groupInterface.addGroup(language);
         break;
       // Delete group
       case prompt.choices[2]:
