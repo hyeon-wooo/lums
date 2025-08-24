@@ -16,15 +16,18 @@ const printList = async (language) => {
     );
 
   // /etc/passwd 포맷: name:x:uid:gid:comment:home:shell
-  const rows = list.map((row) => {
-    const parts = row.split(":");
-    const name = parts[0] ?? "";
-    const uid = parts[2] ?? "";
-    const gid = parts[3] ?? "";
-    const home = parts[5] ?? "";
-    const shell = parts[6] ?? "";
-    return [name, uid, gid, home, shell];
-  });
+  const rows = list
+    .map((row) => {
+      const parts = row.split(":");
+      const name = parts[0] ?? "";
+      const uid = parts[2] ?? "";
+      const gid = parts[3] ?? "";
+      const home = parts[5] ?? "";
+      const shell = parts[6] ?? "";
+      return [name, uid, gid, home, shell];
+    })
+    // 홈디렉터리가 /home으로 시작하지 않는 사용자는 제외
+    .filter((row) => row[3].startsWith("/home"));
 
   printTable(userListLabel[language], rows);
   console.log("Total: ", rows.length);
