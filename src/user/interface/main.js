@@ -20,6 +20,7 @@ const main = async (language) => {
         break;
       // Delete user
       case prompt.choices[2]:
+        await userInterface.deleteUser(language);
         break;
       // Go back
       case prompt.choices[3]:
