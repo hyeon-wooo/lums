@@ -3,6 +3,7 @@ import inputNamePrompt from "../prompt/input_name.js";
 import userCommand from "../command/index.js";
 import successDeletePrompt from "../prompt/success_delete.js";
 import requiredNamePrompt from "../prompt/required_name.js";
+import confirmDeleteHomePrompt from "../prompt/confirm_delete_home.js";
 
 const deleteUser = async (language) => {
   let deletingName = "";
@@ -16,7 +17,12 @@ const deleteUser = async (language) => {
     deletingName = name;
   }
 
-  await userCommand.delUser(deletingName);
+  const { action } = await inquirer.prompt([confirmDeleteHomePrompt[language]]);
+
+  await userCommand.delUser(
+    deletingName,
+    action === confirmDeleteHomePrompt[language].choices[1]
+  );
 
   console.log(successDeletePrompt[language]);
 };
