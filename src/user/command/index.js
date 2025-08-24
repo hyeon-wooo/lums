@@ -4,6 +4,7 @@ import changePassword from "./change_password.js";
 import delUser from "./del.js";
 import createPEMKey from "./create_pem_key.js";
 import getUserByUserName from "./get.js";
+import delPassword from "./del_password.js";
 
 const userCommand = {
   printList,
@@ -12,6 +13,7 @@ const userCommand = {
   delUser,
   createPEMKey,
   getUserByUserName,
+  delPassword,
 };
 
 export default userCommand;

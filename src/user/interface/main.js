@@ -22,16 +22,20 @@ const main = async (language) => {
       case prompt.choices[2]:
         await userInterface.changePassword(language);
         break;
-      // Create PEM key
+      // Remove password
       case prompt.choices[3]:
+        await userInterface.delPassword(language);
+        break;
+      // Create PEM key
+      case prompt.choices[4]:
         await userInterface.createPEMKey(language);
         break;
       // Delete user
-      case prompt.choices[4]:
+      case prompt.choices[5]:
         await userInterface.deleteUser(language);
         break;
       // Go back
-      case prompt.choices[5]:
+      case prompt.choices[6]:
         return 0;
       default:
         console.log(invalidInputPrompt[language].message);
