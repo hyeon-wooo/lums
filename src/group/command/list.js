@@ -1,8 +1,8 @@
 // import readFileSafe from "../../shared/read_file.js";
-import { execSync } from "child_process";
+import execCommand from "../../shared/exec_command.js";
 
 const getGroups = () => {
-  const lines = execSync("cat /etc/group").toString().split("\n");
+  const lines = execCommand("cat /etc/group").toString().split("\n");
   const groups = [];
   for (const line of lines) {
     if (!line) continue;

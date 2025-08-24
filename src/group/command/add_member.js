@@ -1,8 +1,8 @@
-import { execSync } from "child_process";
+import execCommand from "../../shared/exec_command.js";
 
 const addMember = async ({ groupName, userName }) => {
   const command = `gpasswd -a ${userName} ${groupName}`;
-  execSync(command);
+  execCommand(command);
 };
 
 export default addMember;

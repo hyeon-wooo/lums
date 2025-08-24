@@ -1,9 +1,9 @@
-import { execSync } from "child_process";
+import execCommand from "../../shared/exec_command.js";
 
 const checkGroupExist = async ({ gidOrName }) => {
   const command = `getent group ${gidOrName}`;
   try {
-    execSync(command).toString();
+    execCommand(command).toString();
     return true;
   } catch (error) {
     return false;
