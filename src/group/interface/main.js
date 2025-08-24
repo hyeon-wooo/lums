@@ -3,8 +3,11 @@ import mainPrompt from "../prompt/main.js";
 import groupCommand from "../command/index.js";
 import invalidInputPrompt from "../../shared/prompt/invalid_input.js";
 import groupInterface from "./index.js";
+import settingsStore from "../../settings/store.js";
 
-const main = async (language) => {
+const main = async () => {
+  const language = settingsStore.get().language ?? "en";
+
   while (true) {
     const prompt = mainPrompt[language];
     const { action } = await inquirer.prompt([prompt]);
