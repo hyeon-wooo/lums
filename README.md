@@ -57,6 +57,7 @@ Tested on Ubuntu 22.04 (Jammy Jellyfish).
 ```plain
 ── index.js
 ── [domain]
+   ├── command
    ├── interface
    └── prompt
 ```
