@@ -1,63 +1,98 @@
-name: Build & Deploy DEB to GitHub Pages
+name: Build & Release Debian Package
 
 on:
   push:
     tags:
-      - "v*.*.*"
+      - "v*.*.*" # v0.0.1 같은 태그 push 시 실행
 
 jobs:
-  build_deb:
-    name: Build DEB Package
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Set up GPG
-        env:
-          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
-          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+      - name: Build SEA binary (Linux amd64)
         run: |
-          echo "$GPG_PRIVATE_KEY" | gpg --batch --import
-          echo "allow-loopback-pinentry" >> ~/.gnupg/gpg.conf
-          gpg --list-keys
+          npm run build
+          ls -lh build
 
-      - name: Install dpkg-dev
-        run: sudo apt-get update && sudo apt-get install -y dpkg-dev debhelper
-
-      - name: Build .deb package
+      - name: Package .deb
         run: |
-          mkdir -p build
-          dpkg-deb --build . build/lums.deb
-          echo "Built package at build/lums.deb"
+          VERSION=${GITHUB_REF_NAME#v}
+          mkdir -p debpkg/usr/bin
+          cp build/lums debpkg/usr/bin/lums
 
-      - name: Sign .deb package
-        env:
-          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-        run: |
-          debsign -k $(gpg --list-keys --with-colons | awk -F: '/^pub/ {print $5}') build/lums.deb
+          # /etc/lums 디렉토리만 (config.json은 프로그램이 생성)
+          mkdir -p debpkg/etc/lums
 
-  deploy_pages:
-    name: Deploy to GitHub Pages
-    needs: build_deb
-    runs-on: ubuntu-latest
+          mkdir -p debpkg/DEBIAN
+          cat <<EOF > debpkg/DEBIAN/control
+          Package: lums
+          Version: ${VERSION}
+          Section: utils
+          Priority: optional
+          Architecture: amd64
+          Maintainer: Your Name <you@example.com>
+          Description: lums - Node.js SEA packaged CLI
+           A single-executable Node.js program built with SEA.
+          EOF
+
+          dpkg-deb --build debpkg lums_${VERSION}_amd64.deb
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: deb-package
+          path: lums_*_amd64.deb
+
+  publish:
+    runs-on: ubuntu-22.04
+    needs: build
+    permissions:
+      contents: write
 
     steps:
-      - name: Checkout gh-pages branch
-        uses: actions/checkout@v3
+      - name: Download artifact
+        uses: actions/download-artifact@v4
         with:
-          ref: gh-pages
+          name: deb-package
 
-      - name: Copy built package
+      - name: Import GPG key
         run: |
-          mkdir -p deb
-          cp build/lums.deb deb/
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
+          echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
 
-      - name: Commit & Push
+      - name: Setup repo
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add deb/lums.deb
-          git commit -m "Deploy lums.deb for $GITHUB_REF"
-          git push origin gh-pages
+          mkdir repo
+          mv lums_*_amd64.deb repo/
+          cd repo
+
+          # Packages.gz 생성
+          dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
+
+          # Release 파일 생성
+          cat <<EOF > Release
+          Origin: lums
+          Label: lums
+          Suite: stable
+          Version: 1.0
+          Codename: focal
+          Architectures: amd64
+          Components: main
+          Description: lums apt repository
+          EOF
+
+          echo "${{ secrets.GPG_PUBLIC_KEY }}" > lums.gpg
+
+          # Release 서명
+          gpg --batch --yes --passphrase "${{ secrets.GPG_PASSPHRASE }}" -abs -o Release.gpg Release
+          gpg --batch --yes --passphrase "${{ secrets.GPG_PASSPHRASE }}" --clearsign -o InRelease Release
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./repo
