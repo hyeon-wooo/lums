@@ -91,6 +91,15 @@ jobs:
           gpg --batch --yes --passphrase "${{ secrets.GPG_PASSPHRASE }}" -abs -o Release.gpg Release
           gpg --batch --yes --passphrase "${{ secrets.GPG_PASSPHRASE }}" --clearsign -o InRelease Release
 
+          echo '<!DOCTYPE html>
+          <html>
+          <head><meta charset="UTF-8"><title>My Package</title></head>
+          <body>
+            <h1>Download</h1>
+            <p><a href="my-package.deb">Download .deb</a></p>
+          </body>
+          </html>' > index.html
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
