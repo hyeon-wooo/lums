@@ -47,6 +47,7 @@ jobs:
           Architecture: amd64
           Maintainer: Hyeonwoo Kim <hyenowoo.v24@gmail.com>
           Description: lums - A convinient tool for managing users and groups.
+          EOF
 
           # postinst (설치 후 처리)
           cat > debpkg/DEBIAN/postinst <<'EOF'
