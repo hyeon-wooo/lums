@@ -1,0 +1,27 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: lums
+Label: lums
+Suite: stable
+Version: 1.0
+Codename: focal
+Architectures: amd64
+Components: main
+Description: lums apt repository
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEJ9vu3pKJzcnL/pTPUGMoUXbxIosFAmisByMACgkQUGMoUXbx
+IotHmw//VnVwQ4UzVKKOEL/uzXA1tMMzT+i2dfOFUl8Ubi+SHWQsiQkFFJh9LDVo
+N3su4v/4N1VZMBNxCMGLJE4dXFgE9QfVNfM+5KjZiOMozmv5GLfTf28OEYoW1kBk
+kixUKc/+76a71pcygc6xWRJoR0c+u0l6pmyAwaw57xSmJeC/7TH2c623CBh6FcyK
+/Xe4ItL3eFP0r9nMruYC3EeCxhkIPby8+f3WXxPGbAuKS6JpuHtjbNUCi2WGjwvm
+uFAs+j+ZV9eUqLKTznt0VUVHZGEgf21XsCdM04rKjl66MMuRygqvQ3LReL+DPuwS
+jl9msuhaQGu0fkgOIMx2PmAh6ww/yJrphWyGcb5+DisChKxM85QHNZdOxjWN6CkU
+cKu0yXbA5Cg+icudTJ0O2XT5aAhRyHrBqTJnl4AZHl55U3xGBURgFFv/c3oot//h
+Hl4x3ZBHloxLNpVF7gC4HA+U5ZbBLWkUTwTVqTSBuSO/1q4f4U/8VIJthqGI6xBX
+wzUV0DzQO9wBP/ONSgWbEJh3lkj61lBVFI1dCUieiRfjvdXe/TrUwpPjOprPqFSM
+/jzvsFPBmfcps+impkKROakKMskpM5toqJMJcEYbiIQVk/rEsYvDPmZxlnM3Kpz5
++gMo5Mvx5Wi6Y0HCEOsHQ0LZPOh+qkYYFJ0XExxFidtLVNpWpig=
+=D5fx
+-----END PGP SIGNATURE-----
