@@ -4,39 +4,39 @@ Hash: SHA512
 Architectures: amd64
 Codename: focal
 Components: main
-Date: Mon, 25 Aug 2025 08:46:51 +0000
+Date: Mon, 25 Aug 2025 09:09:52 +0000
 Label: lums
 Origin: lums
 Suite: stable
 MD5Sum:
- d42ac17f718ab655872a12da0c39f1ca              431 Packages
- 0f484e7c76c23aed7ab66a3a142a9156              348 Packages.gz
- 414b8248df91f34a0f638b47f0f482a3              131 Release
+ 1a768b41e36a73f472a3dc89959eb5e8              444 Packages
+ 81ab056c2df7fc3966935d7d1097eeec              361 Packages.gz
+ ec3833f7946809a0e72ea009ab1f99fa              131 Release
 SHA1:
- 8a1d84256d200679493d036d55cfeafdd2bb3ef4              431 Packages
- a0a186d1a8102a51cdddc2f3bd7c208b406ad79c              348 Packages.gz
- c01e3823f03ace799e3fedc5a8b951aec8160814              131 Release
+ b49adb7435a8b219b685093a30b369ec5a4a2c8f              444 Packages
+ 69e886422ddb26ead0947dbc6c38fd1c68ee943a              361 Packages.gz
+ 5dfb4a7086cf5426bb844db0270fe204cbb198b9              131 Release
 SHA256:
- 0be8a3af0af9e82a4f5c80afaed39ea07fa5fff3421890242e94a2bc217a7636              431 Packages
- ef023f238f08fc31df01098e9cbcbc3301c982511cb4ea0d3e9907007c9cda8e              348 Packages.gz
- 6c7b2cc7a016ed01b8d08b568c7b93b1a051c240fcce9838e8ee6117cbe04faa              131 Release
+ d5f4c7da694aab12fd341154a02f2852a488aa93561a09f1837578a57811e82b              444 Packages
+ a01cc12f45bb6a943169277ecab96b68911a037c0cce7f0c53d151f48e10949d              361 Packages.gz
+ 4b81e2795be9331d42603275f5683a7d77553bddd26eeacc19c4ba79db31a9fa              131 Release
 SHA512:
- d99ba74502546f6b074de7667e0a7222e988084b0adcbd94bfe4226fe0b69003e0697e439684db97d4320e70b2be3df3a5ec280a3f108901e900097d969c5190              431 Packages
- 68d2ec7edf9984528220d795ed453a9f8081d7223a858e971edb95bcb600d5734690ece993e684fb75e8080f00166e5540cef596b692ea52a332b9abe95dbd91              348 Packages.gz
- a83b4b56819460e6acf85cd32e3d417bb732be367534171b81487efa18d4110f47c5c54cbb4e53ef06183bfd2984660536ee8f76af6510111fc645f365245a85              131 Release
+ e5f9a733ca961a604ecf8226decefd36aba0aaaefd204e88482e5a16f06cf857cc994e7c7b6abfbaed98ba690e3792b00420d0c0036c29ba1ae9298f16b3aea5              444 Packages
+ ee8c016bd665fe804be844b7d38fb2a88125a59219e66c3cf88286c4a4fede7ecac8b5c0dc077796e04221a3bfc01ebf2044f28e4426c4104e95fbf2785f3d3e              361 Packages.gz
+ fa3c678c85918f157d808884e6eefd885cf2a50ed3c501f9e220872856058fa44897ae2ef844579612f470c65b2beadc7b950b1321b73dd612f54e2147959158              131 Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEJ9vu3pKJzcnL/pTPUGMoUXbxIosFAmisIvwACgkQUGMoUXbx
-IouRZw//XNnVITPz7pIN3Ampq79pyjDgXhfbv1qQxu2JV8mlU2w6Dfk3H2J2HEUd
-9x2y/lSqpo1kOyBbM4WaE34MyzzF6bDtTiNR8mIfSaRfMb3y1LtFjMqrOhdqnquZ
-dqG4JVgoOv/hVn36ciatjCXz25kIcjdHwvpPaPWQY9QY9wszt8zdkyTaCf13vtcF
-3Rqz7b2/gGMkNzZ/zsOKIve5EU8w1QIM9OAgzACxLha0CfAM+BZoAUljn410o/zD
-0nzlB9/fc24LV8LQ1zlBNOAU2C98/wd0ZU+ciCIDQkg8OdJLJV5rgYqLgqkYfQAP
-9Zu54nSaYq2Xz4+yuCurAr4EOsrqRAc5Y0I0vnWTQA8oUID5AaYqKlpDD54YP5UT
-yK42PQ7NKGnCBliqf8X866ZxrEzrCzpAm8z8NqBpFKx3p8nAwptiUkmeUjFfLUnm
-Taywb90FsldrS4XOY+HM6frzzcF9YXcDayJBhJz2vpxxkkWxQXsi/PtBUHrjWQhx
-5ugJDo3ZgRx8USdnuvsWoGAnw2jskjZ0sZj7LAwm9bCrH1/NU0VrRVFMKxxhgICx
-eCDFXqnLWlzJ39PcuzaSQnyHU1WxAAUywfJ6pvIFADLAmqbfNg5YMWyW7e5SbRoB
-tLQ8YbYNOfKhw/AE1PlmjQYzEOd8aC7/KSzHfrhTVEYH6LBCOUY=
-=iS7x
+iQIzBAEBCgAdFiEEJ9vu3pKJzcnL/pTPUGMoUXbxIosFAmisKGEACgkQUGMoUXbx
+Ios78A/+MnRIwxVYTvL4yNHSzMEhi4OoekRIeQBF/v9cqAmS8WCctbeLE67G3WLw
+eDVfIQurHdwmaa+ddX1+00M7sKrDdoFKUedVrdYQ+tmzqzpppgGxfLEik4/z2rc2
+ub4gfLC/diHbdXGdqYU539u0tNfCAOjzZhqhnARqV8eGytmaVmM31mntbvvSmWv3
+vd4e3QPIX8nGXnDcJjQwrm/nZOw1me4lLkrtLI5z6iasi7LPAlXlLrU1FOlYU3XA
+nApR08bwWAQ+x/pi1PGLYwVSKrYTjoqXN0UxUOCeyuingyARsPMkknNunEk0Muxs
+5RuYIE1ldO0uikVpH67jfDlWuqGbEWhZLrrQ/JMB8cOThYGJLs+cg2OWYCXJr3Mi
+iYXKqx0FoEmcsWhVBXK1Tv+duelbrBJ07cAb0kPPNBiPKDih9nQY7t8a78iyCAhB
+eY6KVpzz2wpRPcO3aHf0hiPXh05QzYsBmi8dhw0vyyEhkN50oBys0IdDoqIjCcEH
+xaZfx4y5nTiau7VdCAnGpcrVIqBeg5skazuDJTCt0fkFkgDsEBLaytTlgucTS3iN
+jtX8gPjrGhG2Zz/MU90m2sjRW2f6SJWg9ePFqHgfH4wIpg28FmcihTgLUuaTuvcr
+0gD3FGMmk0NkkPfxQ2lNzluIFP9keJcJWra7OfeHD14hJ2PbKMY=
+=5Rh3
 -----END PGP SIGNATURE-----

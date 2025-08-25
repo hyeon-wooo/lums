@@ -1,14 +1,14 @@
 Package: lums
 Version: 0.1.0
 Architecture: amd64
-Maintainer: Your Name <you@example.com>
+Maintainer: Hyeonwoo Kim <hyenowoo.v24@gmail.com>
+Depends: passwd, openssh-client
 Filename: ./lums_0.1.0_amd64.deb
-Size: 26809598
-MD5sum: 63b666b6c35f976e7968894270a66c70
-SHA1: 611b4ebbd4ac67f99dfe58c6ce7e110b8e4728c0
-SHA256: 2a94d4aab25379486f7fc1368447ef7ebebc1ad9b23b7b6360eff0f7b5855b2e
+Size: 26808796
+MD5sum: 8c328b34b98e83257abadddf2288f857
+SHA1: c22a3fc2c14393e53c96b6b06c31e51a58efef7e
+SHA256: dafae67f115fdb44fdd634d53ef60b9787a06e5bffe0898fddc08abc92d00e32
 Section: utils
 Priority: optional
-Description: lums - Node.js SEA packaged CLI
- A single-executable Node.js program built with SEA.
+Description: lums - A convinient tool for managing users and groups.
 
