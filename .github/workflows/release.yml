@@ -85,7 +85,7 @@ jobs:
           Description: lums apt repository
           EOF
 
-          echo "${{ secrets.GPG_PUBLIC_KEY }}" > lums.gpg
+          echo "${{ secrets.GPG_PUBLIC_KEY }}" > gpg --dearmor > lums.gpg
 
           # Release 서명
           gpg --batch --yes --passphrase "${{ secrets.GPG_PASSPHRASE }}" -abs -o Release.gpg Release
