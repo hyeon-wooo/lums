@@ -75,6 +75,7 @@ jobs:
           esac
           exit 0
           EOF
+          chmod 0755 debpkg/DEBIAN/postrm
 
           # fakeroot로 빌드(설치 시 root:root로 깔림)
           fakeroot dpkg-deb --build debpkg lums_${VERSION}_amd64.deb
