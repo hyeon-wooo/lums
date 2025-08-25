@@ -66,26 +66,29 @@ jobs:
 
       - name: Setup repo
         run: |
+          sudo apt-get update
+          sudo apt-get install -y apt-utils dpkg-dev
+
           mkdir repo
           mv lums_*_amd64.deb repo/
           cd repo
 
-          # Packages.gz 생성
-          dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
+          # Packages / Packages.gz
+          dpkg-scanpackages . /dev/null > Packages
+          gzip -9c Packages > Packages.gz
 
-          # Release 파일 생성
-          cat <<EOF > Release
-          Origin: lums
-          Label: lums
-          Suite: stable
-          Version: 1.0
-          Codename: focal
-          Architectures: amd64
-          Components: main
-          Description: lums apt repository
-          EOF
+          # Release (해시/Date 자동 포함)
+          apt-ftparchive \
+            -o APT::FTPArchive::Release::Origin="lums" \
+            -o APT::FTPArchive::Release::Label="lums" \
+            -o APT::FTPArchive::Release::Suite="stable" \
+            -o APT::FTPArchive::Release::Codename="focal" \
+            -o APT::FTPArchive::Release::Architectures="amd64" \
+            -o APT::FTPArchive::Release::Components="main" \
+            release . > Release
 
-          echo "${{ secrets.GPG_PUBLIC_KEY }}" > gpg --dearmor > lums.gpg
+          # 공개키 배포(바이너리 키링)
+          echo "${{ secrets.GPG_PUBLIC_KEY }}" | gpg --dearmor > lums.gpg
 
           # Release 서명
           gpg --batch --yes --passphrase "${{ secrets.GPG_PASSPHRASE }}" -abs -o Release.gpg Release
