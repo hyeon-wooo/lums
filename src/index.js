@@ -25,6 +25,6 @@ const checkPermission = () => {
 };
 
 const canRun = checkPermission();
-if (!canRun) return process.exit(1);
+if (!canRun) process.exit(1);
 
 mainInterface();
