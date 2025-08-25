@@ -1,27 +1,42 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-Origin: lums
-Label: lums
-Suite: stable
-Version: 1.0
-Codename: focal
 Architectures: amd64
+Codename: focal
 Components: main
-Description: lums apt repository
+Date: Mon, 25 Aug 2025 08:46:51 +0000
+Label: lums
+Origin: lums
+Suite: stable
+MD5Sum:
+ d42ac17f718ab655872a12da0c39f1ca              431 Packages
+ 0f484e7c76c23aed7ab66a3a142a9156              348 Packages.gz
+ 414b8248df91f34a0f638b47f0f482a3              131 Release
+SHA1:
+ 8a1d84256d200679493d036d55cfeafdd2bb3ef4              431 Packages
+ a0a186d1a8102a51cdddc2f3bd7c208b406ad79c              348 Packages.gz
+ c01e3823f03ace799e3fedc5a8b951aec8160814              131 Release
+SHA256:
+ 0be8a3af0af9e82a4f5c80afaed39ea07fa5fff3421890242e94a2bc217a7636              431 Packages
+ ef023f238f08fc31df01098e9cbcbc3301c982511cb4ea0d3e9907007c9cda8e              348 Packages.gz
+ 6c7b2cc7a016ed01b8d08b568c7b93b1a051c240fcce9838e8ee6117cbe04faa              131 Release
+SHA512:
+ d99ba74502546f6b074de7667e0a7222e988084b0adcbd94bfe4226fe0b69003e0697e439684db97d4320e70b2be3df3a5ec280a3f108901e900097d969c5190              431 Packages
+ 68d2ec7edf9984528220d795ed453a9f8081d7223a858e971edb95bcb600d5734690ece993e684fb75e8080f00166e5540cef596b692ea52a332b9abe95dbd91              348 Packages.gz
+ a83b4b56819460e6acf85cd32e3d417bb732be367534171b81487efa18d4110f47c5c54cbb4e53ef06183bfd2984660536ee8f76af6510111fc645f365245a85              131 Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEEJ9vu3pKJzcnL/pTPUGMoUXbxIosFAmisIVgACgkQUGMoUXbx
-IotGrA/+PBIuw1LxICZxPIqEViJN07i521yNwQTH9VKbtdOs+S4qYvgONXTDeMiG
-2tK0b0hRjW6m9yZQ7Zh/fdDcwk8m9B0dOZzgvCdU+IuXWQX8gGu9E7PYcnyYiEEO
-gwm9MC5xAFRMxCcYTl2V0q9gJarC0c/gN0AeIg2YZxChn1i+kOpbv4zVfqSP19X2
-sAIpCNiCdbNSD1O14qrjUs+do3+drmUKCoRH/jMhD9qBTfzskgOg+LXhavB1N5bx
-loYtxQhPXC0AxzFC3AGehON2WAB6qtSKF8Cktc3+na3VJtHG8KX/jDA2x0dBXMeG
-iFaxH0deF2kTPIfTPR6Anhpyzupx6dMgJAMJmuar/TowFCRVS1vgJn1qv7bQg75Y
-CZNXzAUsVULNiWqnuSVDTtALxK5yBB+lp/+8n7bjq9b+s+miztanN8lI3LpHOhCZ
-0bJKYRUDNYHDeEDc03F/emMj0M64/vafBMHRNQils1KW175CRNKdmO48FsgNH2W6
-Iwq2nz/Xt/PlSG4qxNSBCKTjaTn3uvsXdIvd8WkDNvXhm6toxopLGHmUqN0Xldxv
-gvNUpqr3G8ksmYKbHCWGRYy5ftzDG6PwrgDrAOQmcp+XFT21O1bHz7v1kpVFqw3o
-DPTKxnPoprJyM9bN9FcWjX+lsvgRjeR1tLgdYaqNvoBEDM0YEHM=
-=yeme
+iQIzBAEBCgAdFiEEJ9vu3pKJzcnL/pTPUGMoUXbxIosFAmisIvwACgkQUGMoUXbx
+IouRZw//XNnVITPz7pIN3Ampq79pyjDgXhfbv1qQxu2JV8mlU2w6Dfk3H2J2HEUd
+9x2y/lSqpo1kOyBbM4WaE34MyzzF6bDtTiNR8mIfSaRfMb3y1LtFjMqrOhdqnquZ
+dqG4JVgoOv/hVn36ciatjCXz25kIcjdHwvpPaPWQY9QY9wszt8zdkyTaCf13vtcF
+3Rqz7b2/gGMkNzZ/zsOKIve5EU8w1QIM9OAgzACxLha0CfAM+BZoAUljn410o/zD
+0nzlB9/fc24LV8LQ1zlBNOAU2C98/wd0ZU+ciCIDQkg8OdJLJV5rgYqLgqkYfQAP
+9Zu54nSaYq2Xz4+yuCurAr4EOsrqRAc5Y0I0vnWTQA8oUID5AaYqKlpDD54YP5UT
+yK42PQ7NKGnCBliqf8X866ZxrEzrCzpAm8z8NqBpFKx3p8nAwptiUkmeUjFfLUnm
+Taywb90FsldrS4XOY+HM6frzzcF9YXcDayJBhJz2vpxxkkWxQXsi/PtBUHrjWQhx
+5ugJDo3ZgRx8USdnuvsWoGAnw2jskjZ0sZj7LAwm9bCrH1/NU0VrRVFMKxxhgICx
+eCDFXqnLWlzJ39PcuzaSQnyHU1WxAAUywfJ6pvIFADLAmqbfNg5YMWyW7e5SbRoB
+tLQ8YbYNOfKhw/AE1PlmjQYzEOd8aC7/KSzHfrhTVEYH6LBCOUY=
+=iS7x
 -----END PGP SIGNATURE-----
