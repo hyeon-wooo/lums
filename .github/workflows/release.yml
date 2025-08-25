@@ -20,26 +20,63 @@ jobs:
 
       - name: Package .deb
         run: |
+          sudo apt-get update
+          sudo apt-get install -y fakeroot
+
+          # 패키지 빌드
           VERSION=${GITHUB_REF_NAME#v}
           mkdir -p debpkg/usr/bin
           cp build/lums debpkg/usr/bin/lums
 
+          # 권한 설정(700)
+          chmod 700 debpkg/usr/bin/lums
+
           # /etc/lums 디렉토리만 (config.json은 프로그램이 생성)
           mkdir -p debpkg/etc/lums
 
+
+
+          # control (패키지 메타데이터)
           mkdir -p debpkg/DEBIAN
           cat <<EOF > debpkg/DEBIAN/control
           Package: lums
           Version: ${VERSION}
+          Depends: passwd, openssh-client
           Section: utils
           Priority: optional
           Architecture: amd64
-          Maintainer: Your Name <you@example.com>
-          Description: lums - Node.js SEA packaged CLI
-           A single-executable Node.js program built with SEA.
+          Maintainer: Hyeonwoo Kim <hyenowoo.v24@gmail.com>
+          Description: lums - A convinient tool for managing users and groups.
+
+          # postinst (설치 후 처리)
+          cat > debpkg/DEBIAN/postinst <<'EOF'
+          #!/bin/sh
+          set -e
+          chown root:root /usr/bin/lums || true
+          chmod 700 /usr/bin/lums || true
+          exit 0
+          EOF
+          chmod 0755 debpkg/DEBIAN/postinst
+
+          # postrm (제거/완전제거 처리)
+          cat > debpkg/DEBIAN/postrm <<'EOF'
+          #!/bin/sh
+          set -e
+          case "$1" in
+            remove)
+              rmdir --ignore-fail-on-non-empty /etc/lums 2>/dev/null || true
+              rmdir --ignore-fail-on-non-empty /var/log/lums 2>/dev/null || true
+              ;;
+            purge)
+              rm -rf /etc/lums || true
+              rm -rf /var/log/lums || true
+              ;;
+          esac
+          exit 0
           EOF
 
-          dpkg-deb --build debpkg lums_${VERSION}_amd64.deb
+          # fakeroot로 빌드(설치 시 root:root로 깔림)
+          fakeroot dpkg-deb --build debpkg lums_${VERSION}_amd64.deb
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
