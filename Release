@@ -1,23 +1,23 @@
 Architectures: amd64
 Codename: focal
 Components: main
-Date: Mon, 25 Aug 2025 09:09:52 +0000
+Date: Thu, 28 Aug 2025 07:20:05 +0000
 Label: lums
 Origin: lums
 Suite: stable
 MD5Sum:
- 1a768b41e36a73f472a3dc89959eb5e8              444 Packages
- 81ab056c2df7fc3966935d7d1097eeec              361 Packages.gz
- ec3833f7946809a0e72ea009ab1f99fa              131 Release
+ c0b6a592fea634ab6e5a5ee4feb2bb78              444 Packages
+ fb7184b5f4f2f90d6312c03e06118bd3              361 Packages.gz
+ f2ca5af538002b78b639777b37fdd607              131 Release
 SHA1:
- b49adb7435a8b219b685093a30b369ec5a4a2c8f              444 Packages
- 69e886422ddb26ead0947dbc6c38fd1c68ee943a              361 Packages.gz
- 5dfb4a7086cf5426bb844db0270fe204cbb198b9              131 Release
+ 1f9ed904bb1982c087bad9bf0d7350d8b7ee533f              444 Packages
+ f9a836f27fb4b7abff85605c4d787247c5329a93              361 Packages.gz
+ 76dfca126456b2408f726c71789fe88861655d05              131 Release
 SHA256:
- d5f4c7da694aab12fd341154a02f2852a488aa93561a09f1837578a57811e82b              444 Packages
- a01cc12f45bb6a943169277ecab96b68911a037c0cce7f0c53d151f48e10949d              361 Packages.gz
- 4b81e2795be9331d42603275f5683a7d77553bddd26eeacc19c4ba79db31a9fa              131 Release
+ a77174d1d31b7040067ced2705fae432ca255a0bafa030c02d8ae47d51664927              444 Packages
+ 5134abfe38efb60f54d951e6914d1199b1d266b066cbe5f841ec40f96e0f1b42              361 Packages.gz
+ 57d1703fc4e4088945b8b62ae86ce8afcb1733a64ea0ff8f9fdec5c066fc9478              131 Release
 SHA512:
- e5f9a733ca961a604ecf8226decefd36aba0aaaefd204e88482e5a16f06cf857cc994e7c7b6abfbaed98ba690e3792b00420d0c0036c29ba1ae9298f16b3aea5              444 Packages
- ee8c016bd665fe804be844b7d38fb2a88125a59219e66c3cf88286c4a4fede7ecac8b5c0dc077796e04221a3bfc01ebf2044f28e4426c4104e95fbf2785f3d3e              361 Packages.gz
- fa3c678c85918f157d808884e6eefd885cf2a50ed3c501f9e220872856058fa44897ae2ef844579612f470c65b2beadc7b950b1321b73dd612f54e2147959158              131 Release
+ ecf075b1501ad5509af6450138d3ec7219f59677b26279b5fdd06d9494c12574dbd484f5392b5ff8b55663d0bc3245d17866bdec971f8b591c5790e808f4b156              444 Packages
+ c4dcd5aa1d961bdcfdbd4a814811239155b1da88aa0ba1c0650cb5559ecdd13c720b0e0ae737543149edd8a5d92877aba8df3355e61b25fe28a039ad3d4f6ebf              361 Packages.gz
+ 27a30f34760d01db2a38ca1ec231b17c00f6ce34edeeb77c0805d73012f1831b71c9efb50f05974aa49b2ff025b51eafb83cab77beefb3988dfc1aaf191c2a48              131 Release

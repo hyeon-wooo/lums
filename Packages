@@ -1,13 +1,13 @@
 Package: lums
-Version: 0.1.0
+Version: 0.1.1
 Architecture: amd64
 Maintainer: Hyeonwoo Kim <hyenowoo.v24@gmail.com>
 Depends: passwd, openssh-client
-Filename: ./lums_0.1.0_amd64.deb
-Size: 26808796
-MD5sum: 8c328b34b98e83257abadddf2288f857
-SHA1: c22a3fc2c14393e53c96b6b06c31e51a58efef7e
-SHA256: dafae67f115fdb44fdd634d53ef60b9787a06e5bffe0898fddc08abc92d00e32
+Filename: ./lums_0.1.1_amd64.deb
+Size: 26814000
+MD5sum: 4baea50bba3c3ba26a1e15935e901f3c
+SHA1: dd6117173cb6cbc6c270ee310c2a0d9de617b692
+SHA256: 2c79e08aaac59b9d9a626338819af7e7be568a97d34c7f94495c3d53c26c602d
 Section: utils
 Priority: optional
 Description: lums - A convinient tool for managing users and groups.
